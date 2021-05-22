@@ -1,0 +1,13 @@
+<header>
+    <h1>Task Tracker</h1>
+    <button style="background-color: green;" class="btn" *ngIf="(showAddBtn | async); else closeBtn"
+        (click)="toggleBtn()">
+        Add 
+    </button>
+    <ng-template #closeBtn>
+        <button style="background-color: red;" class="btn" (click)="toggleBtn()">
+            Close
+        </button>
+    </ng-template>
+</header>
+<app-add-task *ngIf="!(showAddBtn | async)"></app-add-task>
